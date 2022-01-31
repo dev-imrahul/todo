@@ -1,0 +1,11 @@
+{
+  "prettier.enable": false,
+  "prettier.bracketSpacing": false,
+  "markdown.preview.doubleClickToSwitchToEditor": false,
+  "prettier.semi": false,
+  "prettier.useEditorConfig": false,
+  "vetur.format.defaultFormatter.css": "none",
+  "vetur.format.defaultFormatter.scss": "none",
+  "debug.javascript.suggestPrettyPrinting": false,
+  "prettier.htmlWhitespaceSensitivity": "ignore"
+}

@@ -1,0 +1,95 @@
+@import './_partial/color';
+@import './_partial/fonts';
+@import './_partial/mixins';
+@import './_partial/variable';
+
+* {
+  margin: 0 auto;
+}
+
+body {
+  font-size: 16px;
+  font-family: $body-font;
+}
+
+@each $name,
+$value in $colors {
+  .color_#{$name} {
+    color: #{$value};
+  }
+
+  .bg_#{$name} {
+    color: #{$value};
+  }
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .todo-container {
+    height: calc(100vh - 80px);
+    width: 100%;
+    background-color: $light-gray;
+    border-radius: 15px;
+    box-shadow: $smoth-shadow;
+    padding: 25px;
+    overflow: auto;
+  }
+}
+
+.input-group {
+  input[type="text"] {
+    border-radius: 35px 0 0 35px;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .input-group-text {
+    background-color: lighten($primary, 15%);
+    border-radius: 0 35px 35px 0;
+    transition: all .5s ease-in-out;
+    color: #fff;
+
+    &:hover {
+      background-color: $primary;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.todo-items {
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 4px;
+    list-style: none;
+    border: 1px solid #fff;
+    @include card-neu;
+    font-size: 18px;
+    font-weight: 500;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+.check-btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(30, 221, 62);
+  padding: 0;
+}
+.complete-btn{
+  @extend .check-btn;
+  background-color: rgb(13, 93, 185);
+}
